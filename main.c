@@ -1,4 +1,5 @@
 #include "day1.h"
+#include "day2.h"
 #define STB_DS_IMPLEMENTATION
 #include "stb_ds.h"
 
@@ -13,6 +14,17 @@ void run_day1(FILE *file)
     fseek(file, 0, SEEK_SET);
 
     int part2 = aoc_day1_part2(file);
+    printf("Day2 part2: %d\n", part2);
+}
+
+void run_day2(FILE *file)
+{
+    int part1 = aoc_day2_part1(file);
+    printf("Day2 part1: %d\n", part1);
+
+    fseek(file, 0, SEEK_SET);
+
+    int part2 = aoc_day2_part2(file);
     printf("Day2 part2: %d\n", part2);
 }
 
@@ -56,6 +68,9 @@ int main(int argc, char *argv[])
     {
     case 1:
         run_day1(file);
+        break;
+    case 2:
+        run_day2(file);
         break;
     default:
         printf("Invalid day\n");

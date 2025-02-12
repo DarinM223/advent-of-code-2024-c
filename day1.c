@@ -26,7 +26,7 @@ int aoc_day1_part1(FILE *file)
     qsort(right_nums, arrlen(right_nums), sizeof(int), aoc_int_compare);
 
     int total_distance = 0;
-    for (size_t i = 0; i < arrlen(left_nums); i++)
+    for (long int i = 0; i < arrlen(left_nums); i++)
     {
         total_distance += abs(left_nums[i] - right_nums[i]);
     }
@@ -56,7 +56,7 @@ int aoc_day1_part2(FILE *file)
     }
 
     int total_similarity_score = 0;
-    for (size_t i = 0; i < arrlen(left_nums); i++)
+    for (long int i = 0; i < arrlen(left_nums); i++)
     {
         int num = left_nums[i];
         int count = hmget(right_count, num);
