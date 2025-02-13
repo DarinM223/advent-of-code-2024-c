@@ -33,6 +33,11 @@ void run_day3(FILE *file)
 {
     int part1 = aoc_day3_part1(file);
     printf("Day3 part1: %d\n", part1);
+
+    fseek(file, 0, SEEK_SET);
+
+    int part2 = aoc_day3_part2(file);
+    printf("Day3 part2: %d\n", part2);
 }
 
 int main(int argc, char *argv[])
