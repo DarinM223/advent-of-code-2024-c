@@ -1,5 +1,6 @@
 #include "day1.h"
 #include "day2.h"
+#include "day3.h"
 #define STB_DS_IMPLEMENTATION
 #include "stb_ds.h"
 
@@ -26,6 +27,12 @@ void run_day2(FILE *file)
 
     int part2 = aoc_day2_part2(file);
     printf("Day2 part2: %d\n", part2);
+}
+
+void run_day3(FILE *file)
+{
+    int part1 = aoc_day3_part1(file);
+    printf("Day3 part1: %d\n", part1);
 }
 
 int main(int argc, char *argv[])
@@ -71,6 +78,9 @@ int main(int argc, char *argv[])
         break;
     case 2:
         run_day2(file);
+        break;
+    case 3:
+        run_day3(file);
         break;
     default:
         printf("Invalid day\n");
