@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include "stb_ds.h"
 #include "day1.h"
+#include "stb_ds.h"
+#include <stdio.h>
 
 #define BUFFER_SIZE 256
 
@@ -14,8 +14,7 @@ int aoc_day1_part1(FILE *file)
     int *left_nums = NULL;
     int *right_nums = NULL;
     char line[BUFFER_SIZE];
-    while (fgets(line, BUFFER_SIZE, file))
-    {
+    while (fgets(line, BUFFER_SIZE, file)) {
         int num1 = atoi(strtok(line, " "));
         int num2 = atoi(strtok(NULL, " "));
         arrput(left_nums, num1);
@@ -26,8 +25,7 @@ int aoc_day1_part1(FILE *file)
     qsort(right_nums, arrlen(right_nums), sizeof(int), aoc_int_compare);
 
     int total_distance = 0;
-    for (long int i = 0; i < arrlen(left_nums); i++)
-    {
+    for (long int i = 0; i < arrlen(left_nums); i++) {
         total_distance += abs(left_nums[i] - right_nums[i]);
     }
 
@@ -46,8 +44,7 @@ int aoc_day1_part2(FILE *file)
     } *right_count = NULL;
 
     char line[BUFFER_SIZE];
-    while (fgets(line, BUFFER_SIZE, file))
-    {
+    while (fgets(line, BUFFER_SIZE, file)) {
         int num1 = atoi(strtok(line, " "));
         int num2 = atoi(strtok(NULL, " "));
         arrput(left_nums, num1);
@@ -56,8 +53,7 @@ int aoc_day1_part2(FILE *file)
     }
 
     int total_similarity_score = 0;
-    for (long int i = 0; i < arrlen(left_nums); i++)
-    {
+    for (long int i = 0; i < arrlen(left_nums); i++) {
         int num = left_nums[i];
         int count = hmget(right_count, num);
         total_similarity_score += num * count;

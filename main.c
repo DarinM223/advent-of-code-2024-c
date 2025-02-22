@@ -42,42 +42,35 @@ void run_day3(FILE *file)
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2)
-    {
+    if (argc < 2) {
         printf("Expected usage: ./aoc 1 to run day 1\n");
         return 1;
     }
 
     char *endptr;
     long int day = strtol(argv[1], &endptr, 10);
-    if (endptr == argv[1])
-    {
+    if (endptr == argv[1]) {
         printf("No digits were found for day\n");
         return 1;
-    }
-    else if (*endptr != '\0')
-    {
+    } else if (*endptr != '\0') {
         printf("Invalid character %c\n", *endptr);
         return 1;
     }
 
     char path[MAX_PATH_LEN];
     int chars_written = sprintf(path, "inputs/day%ld.txt", day);
-    if (chars_written >= MAX_PATH_LEN)
-    {
+    if (chars_written >= MAX_PATH_LEN) {
         printf("Path length is greater than max size\n");
         return 1;
     }
 
     FILE *file = fopen(path, "r");
-    if (file == NULL)
-    {
+    if (file == NULL) {
         printf("Cannot open input file %s\n", path);
         return 1;
     }
 
-    switch (day)
-    {
+    switch (day) {
     case 1:
         run_day1(file);
         break;
