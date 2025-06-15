@@ -85,6 +85,7 @@ int aoc_day2_part2(FILE *file)
         if (aoc_is_safe_with_removed(levels, arrlen(levels))) {
             total_safe++;
         }
+        arrfree(levels);
     }
     return total_safe;
 }
