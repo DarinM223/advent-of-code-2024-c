@@ -37,8 +37,7 @@ int aoc_day1_part1(FILE *file)
 int aoc_day1_part2(FILE *file)
 {
     int *left_nums = NULL;
-    struct
-    {
+    struct {
         int key;
         int value;
     } *right_count = NULL;

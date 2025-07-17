@@ -19,7 +19,8 @@ int aoc_day2_part1(FILE *file)
         while ((level_str = strtok(NULL, " ")) != NULL) {
             int level = atoi(level_str);
             int diff = level - prev_level;
-            bool same_sign = prev_diff == 0 || (prev_diff < 0 ? diff < 0 : diff >= 0);
+            bool same_sign =
+                prev_diff == 0 || (prev_diff < 0 ? diff < 0 : diff >= 0);
             if (diff == 0 || abs(diff) > 3 || !same_sign) {
                 safe = false;
                 break;
@@ -54,7 +55,8 @@ bool aoc_is_safe_with_removed(int *levels, int levels_size)
             } else {
                 int level = levels[i];
                 int diff = level - prev_level;
-                bool same_sign = prev_diff == 0 || (prev_diff < 0 ? diff < 0 : diff >= 0);
+                bool same_sign =
+                    prev_diff == 0 || (prev_diff < 0 ? diff < 0 : diff >= 0);
                 if (diff == 0 || abs(diff) > 3 || !same_sign) {
                     safe = false;
                     break;
